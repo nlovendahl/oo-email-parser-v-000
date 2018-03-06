@@ -17,4 +17,9 @@ def parse
   no_duplicates
 end
 
+#Alternative//Solution:
+#@emails.split.map do |email|
+#  email.split(',')
+#end.flatten.uniq
+
 end
