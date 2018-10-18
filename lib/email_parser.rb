@@ -4,22 +4,16 @@
 # or whitespace (' ').
 class EmailParser
 
-attr_accessor :emails
+  attr_accessor :emails
 
-def initialize(email_list)
-  @emails = email_list
-end
+  def initialize(emails)
+    @emails = emails
+  end
 
-def parse
-  split_list = @emails.split(/[,\s]/)
-  parsed_emails = split_list.reject(&:empty?)
-  no_duplicates = parsed_emails.uniq
-  no_duplicates
-end
-
-#Alternative//Solution:
-#@emails.split.map do |email|
-#  email.split(',')
-#end.flatten.uniq
+  def parse
+    parsed = self.emails.to_s.split(/\s|,/).uniq
+    parsed.delete("")
+    parsed
+  end
 
 end
