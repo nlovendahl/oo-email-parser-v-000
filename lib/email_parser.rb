@@ -11,7 +11,8 @@ class EmailParser
   end
 
   def parse
-    
+    parsed = []
+    parsed << self.emails.split(/\s/).uniq
   end
 
 end
