@@ -12,6 +12,7 @@ class EmailParser
 
   def parse
     parsed = self.emails.to_s.split(/\s/).uniq
+    parsed
   end
 
 end
